@@ -1,0 +1,7 @@
+namespace rep;
+
+table Reply {
+    pose: [float];
+}
+
+root_type Reply;

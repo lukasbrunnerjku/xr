@@ -1,0 +1,7 @@
+namespace req;
+
+table Request {
+    code: int;
+}
+
+root_type Request;
