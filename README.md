@@ -1,4 +1,10 @@
+Having fun with Python and Unity.
+
 https://openai.com/blog/emergent-tool-use/
+
+Folder structure: <br/>
+xr / flatbuffers <br/>
+xr / flatbuffer-build <br/>
 
 Install CMake... (https://cmake.org/download/) <br/>
 Run the latest installer (e.g. cmake-3.20.0-windows-x86_64.msi) <br/>
