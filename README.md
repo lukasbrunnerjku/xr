@@ -1,3 +1,5 @@
+https://openai.com/blog/emergent-tool-use/
+
 Install CMake... (https://cmake.org/download/) <br/>
 Run the latest installer (e.g. cmake-3.20.0-windows-x86_64.msi) <br/>
 Within the terminal navigate to the "flatbuffers" folder and execute: <br/>
