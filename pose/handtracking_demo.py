@@ -31,6 +31,27 @@ class HandDetector():
                     self.mpDraw.draw_landmarks(img, handLms,
                                                self.mpHands.HAND_CONNECTIONS)
         return img
+    
+    def worldHands(self, img):
+        img = cv2.flip(img, 1)
+        imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        imgRGB.flags.writeable = False
+        results = self.hands.process(imgRGB)
+        if results.multi_hand_world_landmarks:
+            print(results.multi_hand_world_landmarks)
+            """
+            [landmark {
+            x: -0.013786965981125832
+            y: 0.087281234562397
+            z: 0.002671885071322322
+            }
+            landmark {
+            x: 0.017654426395893097
+            y: 0.06580586731433868
+            z: -0.005411498714238405
+            }....
+            """
+            import pdb; pdb.set_trace()
 
     def findPosition(self, img, handNo):
 
@@ -59,11 +80,13 @@ def main(draw: bool = True):
         if not success:
             continue
 
-        img = detector.findHands(img, draw=draw)
+        detector.worldHands(img)
 
-        lmList0 = detector.findPosition(img, 0)
-        if len(lmList0) != 0:
-            print('hand0:', lmList0[4])
+        # img = detector.findHands(img, draw=draw)
+
+        # lmList0 = detector.findPosition(img, 0)
+        # if len(lmList0) != 0:
+        #     print('hand0:', lmList0[4])
 
         # lmList1 = detector.findPosition(img, 1)
         # if len(lmList1) != 0:
