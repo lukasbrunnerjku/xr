@@ -27,6 +27,7 @@ Afterwards I copied the content of the folder xr\unity\netmq\src\NetMQ\bin\Relea
 Unfortunately, there happened to be some compilation errors, since some dlls are trouble makers (assumption already added to unity). <br/>
 So we just keep the depicted subset of ddls: <br/>
 ![](doc/netmq-dlls.PNG)
+
 Unity automatically detects all the dlls and will try to compile the C# script again. <br/>
 I have not found a way to gracefully force unity to recompile my script, but everytime a change happens to the Assests unity will update it. <br/>
 So a new blank line in the script is sufficient to force unity to recompile it. <br/>
