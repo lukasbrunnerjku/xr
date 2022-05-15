@@ -33,8 +33,8 @@ Install the .NET SDK for Windows: https://dotnet.microsoft.com/en-us/download <b
 and https://docs.microsoft.com/en-us/troubleshoot/developer/dotnet/framework/general/developer-language-pack <br/>
 follow: https://www.youtube.com/watch?v=1saf4ahn-ek and restart Windows to make autocompletion etc. work in VS Code <br/>
 
-
-python -m pose.mock_server <br/>
-
 https://google.github.io/mediapipe/solutions/hands <br/>
+https://google.github.io/mediapipe/solutions/pose.html <br/>
+
+Faster development with https://docs.unity3d.com/Manual/ConfigurableEnterPlayMode.html <br/>
 

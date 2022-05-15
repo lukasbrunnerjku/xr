@@ -18,8 +18,8 @@ public class main : MonoBehaviour
     {
         speed = 10f;
         // AsyncIO.ForceDotNet.Force();
-        socket = new RequestSocket();
-        socket.Connect("tcp://localhost:5555");
+        // socket = new RequestSocket();
+        // socket.Connect("tcp://localhost:5555");
     }
 
     // Update is called once per frame
@@ -31,23 +31,31 @@ public class main : MonoBehaviour
 
         int code = 1;
 
-        FlatBufferBuilder builder = new FlatBufferBuilder(1);
-        Request.StartRequest(builder);
-        Request.AddCode(builder, code);
-        var offset = Request.EndRequest(builder);
-        Request.FinishRequestBuffer(builder, offset);
-        ByteBuffer bb = builder.DataBuffer;
-        byte[] msg = bb.ToArray(0, bb.Length);
-        socket.SendFrame(msg, msg.Length);
+        // FlatBufferBuilder builder = new FlatBufferBuilder(1);
+        // Request.StartRequest(builder);
+        // Request.AddCode(builder, code);
+        // var offset = Request.EndRequest(builder);
+        // Request.FinishRequestBuffer(builder, offset);
+        // ByteBuffer bb = builder.DataBuffer;
+        // byte[] msg = bb.ToArray(0, bb.Length);
+        // socket.SendFrame(msg, msg.Length);
 
-        msg = socket.ReceiveFrameBytes();
-        bb = new ByteBuffer(msg);
-        Reply rep = Reply.GetRootAsReply(bb);
-        float[] pose = rep.GetPoseArray();
-        print(string.Join(", ", pose));
+        // msg = socket.ReceiveFrameBytes();
+        // bb = new ByteBuffer(msg);
+        // Reply rep = Reply.GetRootAsReply(bb);
+        // float[] pose = rep.GetPoseArray();
+        // print(string.Join(", ", pose));
 
         float x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
         float z = Input.GetAxis("Vertical") * Time.deltaTime * speed;
         transform.Translate(x, 0, z);
     }
+
+    // void OnDestroy() {
+    //     socket.Disconnect("tcp://localhost:5555");
+    //     socket.Close();
+    //     socket.Dispose();
+    //     NetMQConfig.Cleanup();
+    //     print("Cleaned up NetMQ resources.");
+    // }
 }
